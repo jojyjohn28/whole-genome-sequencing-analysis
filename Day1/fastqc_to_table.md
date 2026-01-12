@@ -19,17 +19,19 @@ It extracts key metrics from FastQC results and outputs a tidy table:
 
 **Works with:**
 
-• *_fastqc.zip
+• \*\_fastqc.zip
 
-• or unzipped *_fastqc/ folders
+• or unzipped \*\_fastqc/ folders
 
 Please use fastqc_to_table.py Day1/scripts
 
 ## ▶️ How to run it
+
 ```bash
 cd day01_qc_preprocessing
 python scripts/fastqc_to_table.py
 ```
+
 Output:fastqc_summary_table.tsv
 
 ## 📊 Example output table

@@ -15,9 +15,8 @@ Data/
 ├── genome_R1.gz
 └── genome_R2.gz
 
-
-- `genome_R1.gz` – Forward (R1) paired-end reads  
-- `genome_R2.gz` – Reverse (R2) paired-end reads  
+- `genome_R1.gz` – Forward (R1) paired-end reads
+- `genome_R2.gz` – Reverse (R2) paired-end reads
 
 ⚠️ The total size of this dataset is **<100 MB**, making it suitable for inclusion
 in a GitHub repository.
@@ -28,21 +27,20 @@ in a GitHub repository.
 
 This dataset is intended for:
 
-- Demonstration and teaching purposes  
-- Testing the assembly and QC workflows  
-- Following the Day-by-Day WGS analysis series  
-- Reproducing figures and results shown in the blog  
+- Demonstration and teaching purposes
+- Testing the assembly and QC workflows
+- Following the Day-by-Day WGS analysis series
+- Reproducing figures and results shown in the blog
 
 ---
 
 ## ⚠️ Important notes
 
-- This is **not the full raw dataset** used in any publication  
-- File names have been simplified for clarity and reproducibility  
-- For real research applications, users should substitute their own raw reads  
+- This is **not the full raw dataset** used in any publication
+- File names have been simplified for clarity and reproducibility
+- For real research applications, users should substitute their own raw reads
 
 ---
-
 
 ## 📖 Data availability
 

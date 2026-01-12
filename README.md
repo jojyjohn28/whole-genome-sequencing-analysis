@@ -5,6 +5,7 @@ This repository documents a **step-by-step, reproducible whole-genome sequencing
 The project is organized as a **daily analysis series**, where each day focuses on a logical stage of genome analysis — from raw sequencing data to comparative genomics and functional interpretation.
 
 All workflows are designed to be:
+
 - HPC-ready (SLURM, batch scripts)
 - Modular and reusable
 - Transparent and reviewer-safe
@@ -15,28 +16,33 @@ All workflows are designed to be:
 ## Project Structure & Roadmap
 
 ### **Day 1 — Raw Reads to Clean, Analysis-Ready Data**
+
 **Goal:** Ensure data integrity and quality before assembly.
 
 **Topics**
+
 - Raw read formats (Illumina & ONT)
 - File integrity checks (md5sum)
 - Read quality assessment
 - Adapter removal and quality trimming
 
 **Tools**
-- FastQC  
-- NanoPlot  
-- Trimmomatic  
-- Cutadapt  
+
+- FastQC
+- NanoPlot
+- Trimmomatic
+- Cutadapt
 
 📂 Folder: `Day1_qc_preprocessing/`
 
 ---
 
 ### **Day 2 — Genome Assembly & Assembly Quality Assessment**
+
 **Goal:** Generate high-quality draft or complete genome assemblies.
 
 **Assemblers**
+
 - SPAdes / metaSPAdes
 - MEGAHIT
 - Shovill (Illumina wrapper)
@@ -44,6 +50,7 @@ All workflows are designed to be:
 - EPI2ME (ONT cloud workflows)
 
 **Assembly Evaluation**
+
 - QUAST (assembly statistics & comparison)
 - N50, contig count, genome size, GC%
 
@@ -52,14 +59,17 @@ All workflows are designed to be:
 ---
 
 ### **Day 3 — Taxonomy, Phylogeny & Genome Similarity**
+
 **Goal:** Place genomes in an evolutionary and taxonomic context.
 
 **Analyses**
+
 - Genome taxonomy assignment
 - Phylogenomic tree construction
 - Species and genus boundary testing
 
 **Tools**
+
 - GTDB-Tk
 - iTOL (tree visualization)
 - FastANI (ANI)
@@ -71,35 +81,40 @@ All workflows are designed to be:
 ---
 
 ### **Day 4 — Genome Annotation & Functional Potential**
+
 **Goal:** Identify genes, pathways, and metabolic capabilities.
 
 **Annotation**
+
 - Prokka (rapid genome annotation)
 - Prodigal (gene prediction)
 - InterProScan (protein domains)
 - DRAM (metabolic & pathway-level annotation)
 
 **Focus Areas**
-- Core metabolic pathways
 
+- Core metabolic pathways
 
 📂 Folder: `Day4_annotation_function/`
 
 ---
 
 ### **Day 5 — Comparative & Downstream Genomic Analyses**
+
 **Goal:** Move from single genomes to comparative and ecological insights.
 
 **Analyses**
+
 - Core and pan-genome analysis
 - Trait screening and specialization
 - Secondary metabolite potential
 
 **Tools**
+
 - panX & Anvi’o
 - antiSMASH (biosynthetic gene clusters)
 - BiG-SCAPE (BGC clustering)
-- Abricate 
+- Abricate
 - Trait-specific gene screening
 
 📂 Folder: `Day5_comparative_genomics/`
@@ -107,6 +122,7 @@ All workflows are designed to be:
 ---
 
 ## Additional Analyses (Optional / Advanced)
+
 Depending on project goals, the following may also be included:
 
 - Plasmid detection & characterization
@@ -115,6 +131,7 @@ Depending on project goals, the following may also be included:
 ---
 
 ## Philosophy of This Repository
+
 - **Reproducibility first** — every step scripted
 - **No over-claiming** — conservative, reviewer-safe interpretations
 - **Real data, real problems** — not toy examples
@@ -123,6 +140,7 @@ Depending on project goals, the following may also be included:
 ---
 
 ## Blog Series
+
 Each day in this repository corresponds to a detailed blog post in the **Daily Bioinformatics from Jojy’s Desk** series.
 
 📘 Blog: https://jojyjohn28.github.io/blog/
@@ -131,9 +149,9 @@ Each day in this repository corresponds to a detailed blog post in the **Daily B
 ---
 
 ## Status
+
 🚧 **Active and evolving project** started on Jan 07;2026
 
 Folders, scripts, and documentation are updated continuously as analyses progress.
 
 **Contributions, suggestions, and reuse are welcome.**
-

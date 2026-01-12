@@ -1,4 +1,3 @@
-
 ## Running Assembly & Evaluation Scripts (Day 2)
 
 This folder contains batch scripts and helper utilities used in **Day 2 of the Whole Genome Sequencing series**, covering genome assembly, quality assessment, and visualization.
@@ -9,14 +8,14 @@ All scripts are designed for **HPC (SLURM-based)** execution unless noted otherw
 
 ## 📂 Script Overview
 
-| Script | Purpose |
-|------|--------|
-| `spades_slurm.sh` | Short-read bacterial genome assembly using **SPAdes** |
-| `megahit_slurm.sh` | Fast assembly for large datasets or exploratory runs using **MEGAHIT** |
-| `unicycler_hybrid.sh` | **Hybrid assembly** (Illumina + Nanopore) using **Unicycler** |
-| `quast.sh` | Assembly quality evaluation using **QUAST** |
-| `quast_to_table.py` | Parse QUAST output into a **summary table (TSV)** |
-| `GC_vis.R` | Visualize **GC content distributions** across assemblies |
+| Script                | Purpose                                                                |
+| --------------------- | ---------------------------------------------------------------------- |
+| `spades_slurm.sh`     | Short-read bacterial genome assembly using **SPAdes**                  |
+| `megahit_slurm.sh`    | Fast assembly for large datasets or exploratory runs using **MEGAHIT** |
+| `unicycler_hybrid.sh` | **Hybrid assembly** (Illumina + Nanopore) using **Unicycler**          |
+| `quast.sh`            | Assembly quality evaluation using **QUAST**                            |
+| `quast_to_table.py`   | Parse QUAST output into a **summary table (TSV)**                      |
+| `GC_vis.R`            | Visualize **GC content distributions** across assemblies               |
 
 ---
 
@@ -39,6 +38,7 @@ All scripts are designed for **HPC (SLURM-based)** execution unless noted otherw
 ## 🧬 Assembly Scripts
 
 ### SPAdes (Short-read isolates)
+
 ```bash
 sbatch spades_slurm.sh
 
@@ -52,10 +52,13 @@ sbatch unicycler_hybrid.sh
 ```
 
 ## 📊 Assembly Evaluation
+
 QUAST
+
 ```bash
 sbatch quast.sh
 ```
+
 ## Convert QUAST results to table
 
 python quast_to_table.py

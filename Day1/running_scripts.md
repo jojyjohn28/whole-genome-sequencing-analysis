@@ -8,7 +8,7 @@ All scripts are designed to work on a Linux system and are **HPC/SLURM-ready**, 
 
 ## 📁 Available Scripts
 
-```text
+````text
 scripts/
 ├── fastqc_loop.sh
 ├── fastqc-slurum.sh
@@ -30,14 +30,16 @@ Recommended for testing, small datasets, or login-node usage.
 
 ```bash
 bash fastqc_loop.sh <input_fastq_dir> <output_dir>
-```
+````
 
 Example
+
 ```bash
 bash fastqc_loop.sh raw_fastq fastqc_results
 ```
 
 ## 🧪 2. FastQC — SLURM Batch Script (Large Datasets)
+
 Script
 
 fastqc-slurum.sh
@@ -54,6 +56,7 @@ INPUT_DIR=/path/to/raw_fastq
 OUTDIR=fastqc_results
 
 Submit the job:
+
 ```bash
 sbatch fastqc-slurum.sh
 ```
@@ -61,4 +64,3 @@ sbatch fastqc-slurum.sh
 ## ✂️ 3. All other — SLURM Batch Script (Illumina PE Reads)
 
 Follow same instruction from 2.
-

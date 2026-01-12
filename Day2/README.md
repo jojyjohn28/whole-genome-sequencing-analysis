@@ -1,4 +1,5 @@
-# Whole Genome Sequencing — Day 2  
+# Whole Genome Sequencing — Day 2
+
 ## Genome Assembly, Quality Assessment, and Topology
 
 This folder contains all scripts, notes, and helper utilities used in **Day 2 of the Whole Genome Sequencing series**.
@@ -56,3 +57,4 @@ Day2/
 
 ##📖 Related blog post
 https://jojyjohn28.github.io/blog/wgs-day2-genome-assembly/
+```
