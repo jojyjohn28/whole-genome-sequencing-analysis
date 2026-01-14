@@ -1,0 +1,169 @@
+🌊 Total Community Analysis from Metagenomes — Day 1
+From Raw Reads to Clean, Analysis-Ready Data
+Today I am sharing a begining of my new project. I am looking "Resource partitioning and co-occurrence and shapes   functional redundancy of ​
+Size-Fractionated Microbiomes in the Delaware and Chesapeake Bays". All analysis from metagenomes read level . this project have many aspects to look. I decided to stsrt from active and total community analysis. 
+For this, I decided to run 3 tools, and select 1 for all samples based on the best results
+
+Before we talk about who is there in a metagenome, we need to make sure the data we start with is clean, reliable, and biologically meaningful.
+
+Day 1 of this series focuses entirely on metagenomic preprocessing — the often overlooked but absolutely critical step that determines the quality of everything downstream.
+
+This series will cover multiple approaches for total community profiling from shotgun metagenomes.
+Today, we start at the very beginning.
+
+🔬 What This Series Is About
+
+Shotgun metagenomics allows us to profile entire microbial communities without PCR amplification bias, capturing:
+
+Bacteria
+
+Archaea
+
+
+In the coming days, I’ll explore taxonomic profiling approaches using:
+
+Kaiju (Day 2)
+
+MetaPhlAn (Day 3)
+
+mOTUs (Day 4)
+
+But before any of that, we need high-quality reads.
+
+📅 Day 1 Focus: Raw Metagenome Preprocessing
+
+Goal:
+Transform raw FASTQ files into clean, trimmed reads suitable for community profiling.
+
+Today’s workflow covers:
+
+Raw metagenomic data inspection
+
+Read quality assessment
+
+Adapter and quality trimming using Trimmomatic
+
+Output files ready for downstream tools
+
+📂 Input Data
+
+Typical input for metagenomic studies:
+
+sample_R1.fastq.gz
+sample_R2.fastq.gz
+
+
+These are paired-end shotgun reads, often generated from Illumina platforms (NovaSeq, HiSeq, NextSeq).
+
+🔍 Step 1: Initial Quality Check
+
+Before trimming, always inspect read quality.
+
+Tool: FastQC
+fastqc sample_R1.fastq.gz sample_R2.fastq.gz
+
+
+Key things to check:
+
+Per-base sequence quality
+
+Adapter contamination
+
+Overrepresented sequences
+
+Read length distribution
+
+At this stage, don’t panic — raw reads often look messy. That’s expected.
+
+✂️ Step 2: Trimming & Filtering with Trimmomatic
+
+For metagenomic data, trimming is essential to:
+
+Remove adapters
+
+Trim low-quality bases
+
+Discard very short reads
+
+Example Trimmomatic Command (Paired-End)
+trimmomatic PE -threads 16 \
+  sample_R1.fastq.gz sample_R2.fastq.gz \
+  sample_R1.trimmed.fastq.gz sample_R1.unpaired.fastq.gz \
+  sample_R2.trimmed.fastq.gz sample_R2.unpaired.fastq.gz \
+  ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 \
+  LEADING:3 \
+  TRAILING:3 \
+  SLIDINGWINDOW:4:15 \
+  MINLEN:50
+
+What each step does:
+
+ILLUMINACLIP → removes adapter contamination
+
+LEADING / TRAILING → trims low-quality bases at ends
+
+SLIDINGWINDOW → trims when quality drops
+
+MINLEN → removes very short reads
+
+For downstream profiling tools, paired trimmed reads are typically used.
+
+📊 Step 3: Post-Trimming Quality Check
+
+Always re-run FastQC after trimming:
+
+fastqc sample_R1.trimmed.fastq.gz sample_R2.trimmed.fastq.gz
+
+
+You should now see:
+
+Improved base quality
+
+Reduced adapter signals
+
+Cleaner read profiles
+
+📁 Output of Day 1
+
+By the end of Day 1, you should have:
+
+sample_R1.trimmed.fastq.gz
+sample_R2.trimmed.fastq.gz
+
+
+These files are analysis-ready and will be used for all taxonomic profiling approaches in the coming days.
+
+🧠 Why This Step Matters
+
+Every profiling tool (Kaiju, MetaPhlAn, mOTUs) assumes:
+
+Reads are high quality
+
+Adapter contamination is removed
+
+Errors are minimized
+
+Skipping or rushing preprocessing can:
+
+Inflate false positives
+
+Bias abundance estimates
+
+Reduce mapping accuracy
+
+Clean input = trustworthy biological conclusions.
+
+🔜 What’s Next?
+
+📅 Day 2: Kaiju — Protein-level taxonomic classification
+We’ll explore how Kaiju uses translated reads to detect bacteria, archaea, and eukaryotes from shotgun metagenomes.
+
+Later in the series:
+
+Day 3: MetaPhlAn (marker-gene based profiling)
+
+Day 4: mOTUs + comparison of all methods + GitHub project release
+
+Stay tuned — we’re just getting started 🚀
+
+The figure attched here with is generated from Kaiju, more deatails about it will be included in day2.
