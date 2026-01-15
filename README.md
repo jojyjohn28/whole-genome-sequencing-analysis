@@ -151,6 +151,8 @@ Each day in this repository corresponds to a detailed blog post in the **Daily B
 ## Status
 
 🚧 **Active and evolving project** started on Jan 07;2026
+**This project/series was completed on Jan 15, 2026.** 
+
 
 Folders, scripts, and documentation are updated continuously as analyses progress.
 
